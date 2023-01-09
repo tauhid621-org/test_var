@@ -1,0 +1,14 @@
+name: test-vars
+
+on: 
+  pull_request:
+
+jobs:
+  display-variables:
+    runs-on: ubuntu-latest
+    environment: abc
+    steps:        
+    - name: Use variables
+      run: |
+        echo "repo variable : ${{ vars.REPO_VAR }}"
+        echo "env variable : ${{ vars.ENV_VAR }}"
